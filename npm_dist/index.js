@@ -88,7 +88,7 @@ var ReactKline = function (_React$Component) {
     }, {
         key: 'getIntervalId',
         value: function getIntervalId() {
-            this.state.kline.getIntervalId();
+            return this.state.kline.getIntervalId();
         }
     }, {
         key: 'render',

@@ -114,7 +114,6 @@ var Kline = function () {
             }
 
             this.intervalId = setInterval(_control.Control.refreshFunction, this.intervalTime);
-
             this.registerMouseEvent();
             _chart_manager.ChartManager.instance.bindCanvas("main", document.getElementById("chart_mainCanvas"));
             _chart_manager.ChartManager.instance.bindCanvas("overlay", document.getElementById("chart_overlayCanvas"));
