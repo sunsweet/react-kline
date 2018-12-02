@@ -95,7 +95,6 @@ export default class Kline {
         }
 
         this.intervalId = setInterval(Control.refreshFunction, this.intervalTime);
-
         this.registerMouseEvent();
         ChartManager.instance.bindCanvas("main", document.getElementById("chart_mainCanvas"));
         ChartManager.instance.bindCanvas("overlay", document.getElementById("chart_overlayCanvas"));

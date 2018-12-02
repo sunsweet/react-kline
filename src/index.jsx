@@ -53,7 +53,7 @@ class ReactKline extends React.Component {
     }
 
     getIntervalId(){
-        this.state.kline.getIntervalId();
+        return this.state.kline.getIntervalId();
     }
 
     render() {
