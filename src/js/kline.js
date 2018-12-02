@@ -67,6 +67,7 @@ export default class Kline {
         this.onThemeChange=null;
         this.onRangeChange=null;
         this.onRequestData=null;
+        this.intervalId=null;
 
         Object.assign(this, option);
 
@@ -93,7 +94,7 @@ export default class Kline {
             });
         }
 
-        setInterval(Control.refreshFunction, this.intervalTime);
+        this.intervalId = setInterval(Control.refreshFunction, this.intervalTime);
 
         this.registerMouseEvent();
         ChartManager.instance.bindCanvas("main", document.getElementById("chart_mainCanvas"));
@@ -107,6 +108,10 @@ export default class Kline {
         this.setSymbol(this.symbol,this.symbolName);
 
         $(this.element).css({visibility: "visible"});
+    }
+
+    getIntervalId(){
+        return this.intervalId;
     }
 
     resize(width, height) {

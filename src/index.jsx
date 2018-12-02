@@ -52,6 +52,10 @@ class ReactKline extends React.Component {
         this.state.kline.setIntervalTime(intervalTime);
     }
 
+    getIntervalId(){
+        this.state.kline.getIntervalId();
+    }
+
     render() {
         return (
             <div id="kline_container">
