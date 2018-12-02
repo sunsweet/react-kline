@@ -86,6 +86,11 @@ var ReactKline = function (_React$Component) {
             this.state.kline.setIntervalTime(intervalTime);
         }
     }, {
+        key: 'getIntervalId',
+        value: function getIntervalId() {
+            this.state.kline.getIntervalId();
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(

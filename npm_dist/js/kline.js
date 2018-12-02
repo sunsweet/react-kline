@@ -85,6 +85,7 @@ var Kline = function () {
         this.onThemeChange = null;
         this.onRangeChange = null;
         this.onRequestData = null;
+        this.intervalId = null;
 
         Object.assign(this, option);
 
@@ -112,7 +113,7 @@ var Kline = function () {
                 });
             }
 
-            setInterval(_control.Control.refreshFunction, this.intervalTime);
+            this.intervalId = setInterval(_control.Control.refreshFunction, this.intervalTime);
 
             this.registerMouseEvent();
             _chart_manager.ChartManager.instance.bindCanvas("main", document.getElementById("chart_mainCanvas"));
@@ -126,6 +127,11 @@ var Kline = function () {
             this.setSymbol(this.symbol, this.symbolName);
 
             (0, _jquery2.default)(this.element).css({ visibility: "visible" });
+        }
+    }, {
+        key: 'getIntervalId',
+        value: function getIntervalId() {
+            return this.intervalId;
         }
     }, {
         key: 'resize',
